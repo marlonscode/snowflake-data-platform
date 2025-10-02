@@ -1,0 +1,17 @@
+
+version: 2
+
+models:
+  - name: customer
+    description: "staging customer model"
+    columns:
+      - name: C_ACCTBAL_ROUNDED
+        description: "Account balance rounded"
+        data_tests:
+          - not_null
+          - not_negative # custom generic test
+      - name: FIRST_NAME_UPPERCASE_TRUNCATED
+        description: "First name uppercased and truncated"
+        data_tests:
+          - not_null
+          - unique
